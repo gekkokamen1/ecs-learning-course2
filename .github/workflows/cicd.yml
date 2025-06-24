@@ -34,7 +34,7 @@ jobs:
         run: docker image build -t temp_api_image:latest .
 
       - name: Configuire Aws credentials
-        uses: aws-actions/Configuire-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v4
         # usesのライブラリへの引数
         with:
           aws-retion: ${{ env.AWS_REGION }}
