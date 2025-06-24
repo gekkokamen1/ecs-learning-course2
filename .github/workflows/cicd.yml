@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: cicid-section/api
+        working-directory: cicd-section/api
     steps:
     # checkout code 誰かの作ったライブラリを使用
       - uses: Actions/checkout@v4
