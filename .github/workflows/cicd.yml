@@ -55,7 +55,7 @@ jobs:
         # artifact　デプロイで$ECR_REGISTRY/$ECR_REPOSITORY:${{ github.sha }}の値を使いたい
         #保存領域　api-image-uri.txt
       - name: Upload the image uri file as an artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: api-image-uri
           path: cicd-section/api/api-image-uri.txt
