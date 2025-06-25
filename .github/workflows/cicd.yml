@@ -75,7 +75,7 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
 
-     # artifactで退避したapi-image-uri.txt($ECR_REGISTRY/$ECR_REPOSITORY:${{ github.sha }}の値)
+     # artifactで退避したapi-image-uri.txt
       - name: Download the artifact
         uses: actions/download-artifact@v3
         with:
@@ -84,9 +84,8 @@ jobs:
 
       - name: Define the image URI
         run: |
-        # API_IMAGE_URI=image url がechoで作成$GITHUB_ENVはgithubの環境変数
           echo "API_IMAGE_URI=$(cat artifacts/api-image-uri.txt)" >> $GITHUB_ENV
-
+   # API_IMAGE_URI=image url がechoで作成$GITHUB_ENVはgithubの環境変数
       - name: Fill in the new image URI in the amazon ECS task definition
         id: render-task-def
         uses: aws-actions/amazon-ecs-render-task-definition@v1
