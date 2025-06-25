@@ -77,7 +77,7 @@ jobs:
 
      # artifactで退避したapi-image-uri.txt($ECR_REGISTRY/$ECR_REPOSITORY:${{ github.sha }}の値)
       - name: Download the artifact
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: api-image-uri
           path: artifacts
