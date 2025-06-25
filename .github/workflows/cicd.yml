@@ -75,10 +75,10 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
 
+     # artifactで退避したapi-image-uri.txt($ECR_REGISTRY/$ECR_REPOSITORY:${{ github.sha }}の値)
       - name: Download the artifact
         uses: actions/download-artifact@v2
         with:
-        # # artifactで退避したapi-image-uri.txt($ECR_REGISTRY/$ECR_REPOSITORY:${{ github.sha }}の値)
           name: api-image-uri
           path: artifacts
 
